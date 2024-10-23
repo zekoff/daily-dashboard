@@ -1,12 +1,8 @@
-"use client";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-import { getFunctions } from "firebase/functions";
+import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -20,22 +16,6 @@ const firebaseConfig = {
   measurementId: "G-P6C08YK0LE"
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-const functions = getFunctions(app);
-
-import NasaApodCard from "./components/nasaApodCard";
-export default function Home() : JSX.Element {
-  return (
-    <div>
-      {/* Today's date */}
-      {/* NASA Astronomy Picture of the Day */}
-      <NasaApodCard firebaseApp={app} />
-      {/* Advice component */}
-      {/* Proverbs component */}
-      {/* News component (NewsAPI, Spaceflight News) */}
-    </div>
-  );
-}
+const analytics = getAnalytics(app);
