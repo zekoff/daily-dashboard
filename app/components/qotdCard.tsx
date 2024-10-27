@@ -17,6 +17,7 @@ interface QotdData {
 const QotdCard: React.FC<QotdCardProps> = ({firebaseApp}) => {
     const [quote, setQuote] = useState<string>('');
     const [author, setAuthor] = useState<string>('');
+    const [loading, setLoading] = useState(true);
     const getQotd = httpsCallable<{}, {quote: QotdData}>(getFunctions(firebaseApp), 'getQotd');
 
     useEffect(() => {
@@ -27,22 +28,28 @@ const QotdCard: React.FC<QotdCardProps> = ({firebaseApp}) => {
                 setAuthor(response.data.quote.author);
             } catch (error) {
                 console.error('Error fetching the quote of the day:', error);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchQuote();
     }, []);
 
+    if (loading) {
+        return <Typography variant="h6">Loading...</Typography>;
+    }
+
     return (
         <Card>
             <CardContent>
-                <Typography variant="h5" component="div">
-                    Quote of the Day
+                <Typography variant="h5">
+                    Quote
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body1" color="text.secondary">
                     {quote}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" align="right">
+                <Typography variant="body2" color="text.secondary">
                     - {author}
                 </Typography>
             </CardContent>

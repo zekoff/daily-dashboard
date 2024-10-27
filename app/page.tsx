@@ -25,19 +25,47 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 const functions = getFunctions(app);
+const today = new Date();
+const formattedDate = today.toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
 
 import NasaApodCard from "./components/nasaApodCard";
 import QotdCard from "./components/qotdCard";
-export default function Home() : JSX.Element {
+import { Card, Container, Divider, Paper, Stack, Typography } from "@mui/material";
+import DataJokeCard from "./components/dadJokeCard";
+import AdviceCard from "./components/adviceCard";
+import WeatherCard from "./components/weatherCard";
+export default function Home(): JSX.Element {
   return (
-    <div>
-      {/* Today's date */}
-      {/* NASA Astronomy Picture of the Day */}
-      <NasaApodCard firebaseApp={app} />
-      <QotdCard firebaseApp={app} />
-      {/* Advice component */}
-      {/* Proverbs component */}
-      {/* News component (NewsAPI, Spaceflight News) */}
-    </div>
+    <Container sx={{ paddingTop: 2, paddingBottom: 4 }}>
+      <Stack spacing={2} >
+        <Paper elevation={12}>
+          <Card sx={{ padding: 2 }}>
+            <Typography variant="h4">Today is {formattedDate}</Typography>
+          </Card>
+        </Paper>
+        <Paper elevation={12}>
+          <NasaApodCard firebaseApp={app} />
+        </Paper>
+        <Paper elevation={12}>
+          <QotdCard firebaseApp={app} />
+        </Paper>
+        <Paper elevation={12}>
+          <DataJokeCard />
+        </Paper>
+        <Paper elevation={12}>
+          <AdviceCard />
+        </Paper>
+        <Paper elevation={12}>
+          <WeatherCard />
+        </Paper>
+        {/* Proverbs component */}
+        {/* News component (NewsAPI, Spaceflight News) */}
+      </Stack>
+    </Container>
   );
 }

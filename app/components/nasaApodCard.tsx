@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardContent, CardMedia, Typography, CircularProgress } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, CircularProgress, CardHeader } from '@mui/material';
 import { FirebaseApp } from 'firebase/app';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 
@@ -43,6 +43,7 @@ const NasaApodCard: React.FC<NasaApodCardProps> = ({firebaseApp}) => {
 
     return (
         <Card>
+            <CardHeader title="NASA Astronomy Picture of the Day" />
             <CardMedia hidden={!data.url}
                 component="img"
                 height="140"
@@ -50,7 +51,7 @@ const NasaApodCard: React.FC<NasaApodCardProps> = ({firebaseApp}) => {
                 alt={data.title}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h5">
                     {data.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
