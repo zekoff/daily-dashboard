@@ -55,9 +55,9 @@ const WeatherCard: React.FC = () => {
                         {/* <Typography variant="body2" color="textSecondary">
                         {weather || 'Loading...'}
                     </Typography> */}
-                        {weather?.slice(0, 3).map((report: WeatherReport): any => {
+                        {weather?.slice(0, 3).map((report: WeatherReport, index): any => {
                             return (
-                                <Box>
+                                <Box key={index}>
                                     <Typography variant="h6" color="textSecondary">
                                         {report.name}
                                     </Typography>

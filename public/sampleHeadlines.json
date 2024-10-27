@@ -1,0 +1,69 @@
+{
+    "data": {
+      "warnings": [
+        "limit is higher than your plan allows"
+      ],
+      "meta": {
+        "found": 916040,
+        "returned": 3,
+        "limit": 3,
+        "page": 1
+      },
+      "data": [
+        {
+          "uuid": "35e05755-5b26-41d2-9f16-e0e111e66d22",
+          "title": "Georgia’s pro-Western opposition refuses to accept election defeat",
+          "description": "Georgia’s pro-Western opposition parties have said they won’t recognize parliamentary election results and will fight to overturn them",
+          "keywords": "",
+          "snippet": "The coalition of parties “will fight like never before” to get results of the weekend ballot reversed, one party leader has vowed\n\nLeaders of several opposi...",
+          "url": "https://www.rt.com/russia/606589-georiga-opposition-refuse-accept-defeat/",
+          "image_url": "https://mf.b37mrtl.ru/files/2024.10/article/671e82e72030273c384fc5be.jpg",
+          "language": "en",
+          "published_at": "2024-10-27T18:21:49.000000Z",
+          "source": "rt.com",
+          "categories": [
+            "general",
+            "politics"
+          ],
+          "relevance_score": null,
+          "locale": "us"
+        },
+        {
+          "uuid": "9dd0d8ff-4387-4be8-9a1a-8329442c57ff",
+          "title": "JD Vance says Trump clashed with former officials for refusing to engage in 'ridiculous war'",
+          "description": "Sen. JD Vance made assertions about why John Kelly and other former officials are now opposing former President Trump after serving in his administration.",
+          "keywords": "",
+          "snippet": "Republican vice presidential candidate Sen. JD Vance, of Ohio argued that his running mate, former President Trump, has clashed with former Pentagon officials f...",
+          "url": "https://www.foxnews.com/politics/jd-vance-says-trump-clashed-former-officials-refusing-engage-ridiculous-war",
+          "image_url": "https://static.foxnews.com/foxnews.com/content/uploads/2024/10/gettyimages-2180861343-scaled.jpg",
+          "language": "en",
+          "published_at": "2024-10-27T18:17:33.000000Z",
+          "source": "foxnews.com",
+          "categories": [
+            "general",
+            "politics"
+          ],
+          "relevance_score": null,
+          "locale": "us"
+        },
+        {
+          "uuid": "028bc7ed-a515-4ee8-a70f-ddccae44d1f8",
+          "title": "Falcons' Kyle Pitts nearly suffers embarrassing moment on TD play vs Bucs",
+          "description": "Atlanta Falcons star tight end Kyle Pitts nearly had a touchdown taken away over a lackadaisical play as he crossed into the end zone against the Tampa Bay Bucc...",
+          "keywords": "",
+          "snippet": "Atlanta Falcons tight end Kyle Pitts nearly suffered an embarrassing football moment on Sunday in the game against the Tampa Bay Buccaneers.\n\nFalcons quarterbac...",
+          "url": "https://www.foxnews.com/sports/falcons-kyle-pitts-nearly-suffers-embarrassing-moment-td-play-vs-bucs",
+          "image_url": "https://static.foxnews.com/foxnews.com/content/uploads/2024/10/kyle-pitts.jpg",
+          "language": "en",
+          "published_at": "2024-10-27T18:17:22.000000Z",
+          "source": "foxnews.com",
+          "categories": [
+            "general",
+            "politics"
+          ],
+          "relevance_score": null,
+          "locale": "us"
+        }
+      ]
+    }
+  }

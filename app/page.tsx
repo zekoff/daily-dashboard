@@ -39,10 +39,11 @@ import { Card, Container, Divider, Paper, Stack, Typography } from "@mui/materia
 import DataJokeCard from "./components/dadJokeCard";
 import AdviceCard from "./components/adviceCard";
 import WeatherCard from "./components/weatherCard";
+import HeadlinesCard from "./components/headlinesCard";
 export default function Home(): JSX.Element {
   return (
     <Container sx={{ paddingTop: 2, paddingBottom: 4 }}>
-      <Stack spacing={2} >
+      <Stack spacing={2}>
         <Paper elevation={12}>
           <Card sx={{ padding: 2 }}>
             <Typography variant="h4">Today is {formattedDate}</Typography>
@@ -65,6 +66,9 @@ export default function Home(): JSX.Element {
         </Paper>
         {/* Proverbs component */}
         {/* News component (NewsAPI, Spaceflight News) */}
+        <Paper elevation={12}>
+          <HeadlinesCard firebaseApp={app} />
+        </Paper>
       </Stack>
     </Container>
   );
