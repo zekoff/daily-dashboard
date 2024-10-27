@@ -2,7 +2,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { getFunctions } from "firebase/functions";
+// import { getFunctions } from "firebase/functions";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,7 +24,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-const functions = getFunctions(app);
+// const functions = getFunctions(app);
 const today = new Date();
 const formattedDate = today.toLocaleDateString('en-US', {
   weekday: 'long',
@@ -35,11 +35,12 @@ const formattedDate = today.toLocaleDateString('en-US', {
 
 import NasaApodCard from "./components/nasaApodCard";
 import QotdCard from "./components/qotdCard";
-import { Card, Container, Divider, Paper, Stack, Typography } from "@mui/material";
+import { Card, Container, Paper, Stack, Typography } from "@mui/material";
 import DataJokeCard from "./components/dadJokeCard";
 import AdviceCard from "./components/adviceCard";
 import WeatherCard from "./components/weatherCard";
 import HeadlinesCard from "./components/headlinesCard";
+import ProverbsComponent from "./components/proverbsComponent";
 export default function Home(): JSX.Element {
   return (
     <Container sx={{ paddingTop: 2, paddingBottom: 4 }}>
@@ -48,6 +49,12 @@ export default function Home(): JSX.Element {
           <Card sx={{ padding: 2 }}>
             <Typography variant="h4">Today is {formattedDate}</Typography>
           </Card>
+        </Paper>
+        <Paper elevation={12}>
+          <WeatherCard />
+        </Paper>
+        <Paper elevation={12}>
+          <ProverbsComponent />
         </Paper>
         <Paper elevation={12}>
           <NasaApodCard firebaseApp={app} />
@@ -61,11 +68,6 @@ export default function Home(): JSX.Element {
         <Paper elevation={12}>
           <AdviceCard />
         </Paper>
-        <Paper elevation={12}>
-          <WeatherCard />
-        </Paper>
-        {/* Proverbs component */}
-        {/* News component (NewsAPI, Spaceflight News) */}
         <Paper elevation={12}>
           <HeadlinesCard firebaseApp={app} />
         </Paper>

@@ -18,7 +18,7 @@ const QotdCard: React.FC<QotdCardProps> = ({firebaseApp}) => {
     const [quote, setQuote] = useState<string>('');
     const [author, setAuthor] = useState<string>('');
     const [loading, setLoading] = useState(true);
-    const getQotd = httpsCallable<{}, {quote: QotdData}>(getFunctions(firebaseApp), 'getQotd');
+    const getQotd = httpsCallable<unknown, {quote: QotdData}>(getFunctions(firebaseApp), 'getQotd');
 
     useEffect(() => {
         const fetchQuote = async () => {

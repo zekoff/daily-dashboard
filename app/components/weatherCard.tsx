@@ -31,11 +31,10 @@ const WeatherCard: React.FC = () => {
         const fetchWeather = async () => {
             try {
                 const response = await axios.get(MADISON_WEATHER_ENDPOINT);
-                console.log(response.data);
                 const todayWeather = response.data.properties.periods;
                 setWeather(todayWeather);
             } catch (err) {
-                setError('Failed to fetch weather data');
+                setError(`Failed to fetch weather data ${err}`);
             }
         };
 
@@ -55,7 +54,7 @@ const WeatherCard: React.FC = () => {
                         {/* <Typography variant="body2" color="textSecondary">
                         {weather || 'Loading...'}
                     </Typography> */}
-                        {weather?.slice(0, 3).map((report: WeatherReport, index): any => {
+                        {weather?.slice(0, 3).map((report: WeatherReport, index): JSX.Element => {
                             return (
                                 <Box key={index}>
                                     <Typography variant="h6" color="textSecondary">

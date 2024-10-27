@@ -6,3 +6,4 @@
 - [National Weather Service](https://www.weather.gov/documentation/services-web-api)
 - [Advice Slip](https://api.adviceslip.com/)
 - [icanhazdadjoke](https://icanhazdadjoke.com/api)
+- [ESV API](https://api.esv.org/)

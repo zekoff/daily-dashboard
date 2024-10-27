@@ -16,7 +16,7 @@ interface NasaApodCardProps {
 const NasaApodCard: React.FC<NasaApodCardProps> = ({firebaseApp}) => {
     const [data, setData] = useState<NasaApodData | null>(null);
     const [loading, setLoading] = useState(true);
-    const getNasaApod = httpsCallable<{}, NasaApodData>(getFunctions(firebaseApp), 'getNasaApod');
+    const getNasaApod = httpsCallable<unknown, NasaApodData>(getFunctions(firebaseApp), 'getNasaApod');
 
     useEffect(() => {
         const fetchData = async () => {
