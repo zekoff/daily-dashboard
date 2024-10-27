@@ -27,12 +27,14 @@ const app = initializeApp(firebaseConfig);
 const functions = getFunctions(app);
 
 import NasaApodCard from "./components/nasaApodCard";
+import QotdCard from "./components/qotdCard";
 export default function Home() : JSX.Element {
   return (
     <div>
       {/* Today's date */}
       {/* NASA Astronomy Picture of the Day */}
       <NasaApodCard firebaseApp={app} />
+      <QotdCard firebaseApp={app} />
       {/* Advice component */}
       {/* Proverbs component */}
       {/* News component (NewsAPI, Spaceflight News) */}
