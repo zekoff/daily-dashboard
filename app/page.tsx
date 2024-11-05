@@ -32,18 +32,66 @@ const formattedDate = today.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+// const auth = getAuth(app);
+// const provider = new GoogleAuthProvider();
+
 
 import NasaApodCard from "./components/nasaApodCard";
 import QotdCard from "./components/qotdCard";
-import { Card, Container, Paper, Stack, Typography } from "@mui/material";
+import { Button, Card, Container, Paper, Stack, Typography } from "@mui/material";
 import DataJokeCard from "./components/dadJokeCard";
 import AdviceCard from "./components/adviceCard";
 import WeatherCard from "./components/weatherCard";
-import HeadlinesCard from "./components/headlinesCard";
+// import HeadlinesCard from "./components/headlinesCard";
 import ProverbsComponent from "./components/proverbsComponent";
+import { getAuth, User } from "firebase/auth";
+import { useEffect, useState } from "react";
 export default function Home(): JSX.Element {
+  // signInWithRedirect(auth, provider);
+  const [user, setUser] = useState<User | null>(null);
+  // useEffect(() => {
+  //   const fetchedUser = async () => {
+  //     const result = await getRedirectResult(auth);
+  //     const credential = result ? GoogleAuthProvider.credentialFromResult(result) : null;
+  //     const token = credential ? credential.accessToken : null;
+  //     result ? setUser(result.user) : setUser(null);
+  //     result ? console.log(result.user) : console.log("No user");
+  //   };
+  //   fetchedUser();
+  // }, []);
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((usr) => {
+  //     if (usr) {
+  //       console.log("Found user");
+  //       const uid = usr.uid
+  //       console.log(`User ID: ${uid}`);
+  //       setUser(usr);
+  //     // } else {
+  //     //   console.log("No user");
+  //     //   // setUser(null);
+  //     //   signInWithRedirect(auth, provider);
+  //     }
+  //   });
+  //   return () => unsubscribe();
+  // }, []);
+  useEffect(() => {
+    return getAuth().onAuthStateChanged(usr => setUser(usr));
+  });
+  // const handleSignIn = () => {
+  //   signInWithRedirect(auth, provider);
+  // };
+  // TODO: Implement sign out
+  // const handleSignOut = async () => { }
+  // signOut(auth);
+  const showUser = () => { console.log(user) };
+  // showUser();
+  // const createUser = () => {
+
+  // };
   return (
     <Container sx={{ paddingTop: 2, paddingBottom: 4 }}>
+      {/* {user ? null : <Button title="Sign In" onClick={handleSignIn} variant="contained" >Sign In</Button>} */}
+      <Button onClick={showUser}>Show User</Button>
       <Stack spacing={2}>
         <Paper elevation={12}>
           <Card sx={{ padding: 2 }}>
@@ -68,9 +116,9 @@ export default function Home(): JSX.Element {
         <Paper elevation={12}>
           <AdviceCard />
         </Paper>
-        <Paper elevation={12}>
+        {/* <Paper elevation={12}>
           <HeadlinesCard firebaseApp={app} />
-        </Paper>
+        </Paper> */}
       </Stack>
     </Container>
   );
