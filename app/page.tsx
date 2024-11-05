@@ -116,9 +116,6 @@ export default function Home(): JSX.Element {
         <Paper elevation={12}>
           <AdviceCard />
         </Paper>
-        {/* <Paper elevation={12}>
-          <HeadlinesCard firebaseApp={app} />
-        </Paper> */}
       </Stack>
     </Container>
   );
