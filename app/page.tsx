@@ -46,6 +46,7 @@ import WeatherCard from "./components/weatherCard";
 import ProverbsComponent from "./components/proverbsComponent";
 import { getAuth, User } from "firebase/auth";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 export default function Home(): JSX.Element {
   // signInWithRedirect(auth, provider);
   const [user, setUser] = useState<User | null>(null);
@@ -92,6 +93,7 @@ export default function Home(): JSX.Element {
     <Container sx={{ paddingTop: 2, paddingBottom: 4 }}>
       {/* {user ? null : <Button title="Sign In" onClick={handleSignIn} variant="contained" >Sign In</Button>} */}
       <Button onClick={showUser}>Show User</Button>
+      <Link href="/news">To News Page</Link>
       <Stack spacing={2}>
         <Paper elevation={12}>
           <Card sx={{ padding: 2 }}>

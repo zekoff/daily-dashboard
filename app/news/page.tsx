@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { Container, Paper } from '@mui/material';
 import React from 'react';
